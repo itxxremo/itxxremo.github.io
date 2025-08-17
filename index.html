@@ -3,223 +3,471 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Remo | Pro Gamer • Developer • Designer</title>
-<meta name="description" content="Remo (Deepak) — Class 8, Adwaita Mission School, gamer & future game/web/app developer from Punsia, Banka. Neon portfolio with live particles." />
+<title>Remo | Gamer • Developer • Hacker</title>
+<meta name="description" content="Remo (Deepak) — Gamer, future developer, designer, ethical hacking learner. Creator of Hurricane game." />
 <meta name="theme-color" content="#00eaff" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root{
-    --bg:#050512;
-    --panel:#0c0c2a;
-    --ink:#e9ebff;
-    --muted:#a3a9ff;
-    --n1:#00eaff; --n2:#7a00ff; --n3:#ff007a;
+    --bg:#050013;
+    --card:#0d0d2b;
+    --neon1:#00eaff;
+    --neon2:#7a00ff;
+    --neon3:#ff007a;
+    --text:#e7e9ff;
   }
   *{box-sizing:border-box}
-  html,body{height:100%;margin:0}
-  body{
-    color:var(--ink);
-    background:radial-gradient(1200px 600px at 10% 10%, #0a0a2a 0%, transparent 60%),
-               radial-gradient(900px 500px at 90% 20%, #120028 0%, transparent 60%),
-               linear-gradient(180deg,#040412,#060619);
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-    overflow-x:hidden;
-  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
-  .wrap{position:relative;isolation:isolate}
-  /* live wallpaper (behind everything) */
-  #fx{position:fixed;inset:0;z-index:-2}
-  #glow{position:fixed;inset:-30%;filter:blur(60px);opacity:.6;z-index:-3;
-        background:radial-gradient(800px 800px at 20% 20%, rgba(0,234,255,.25), transparent 60%),
-                    radial-gradient(900px 900px at 85% 25%, rgba(122,0,255,.18), transparent 65%),
-                    radial-gradient(1000px 1000px at 50% 90%, rgba(255,0,122,.18), transparent 60%)}
-
-  /* layout */
-  section{padding:78px 18px;max-width:1100px;margin:0 auto}
-  .hero{height:min(92vh,820px);display:grid;place-content:center;text-align:center}
-  .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;
-         background:#0f1035;border:1px solid #25265f;box-shadow:0 0 22px rgba(122,0,255,.25) inset}
-  .title{font-family: Orbitron, sans-serif;font-weight:800;
-         font-size:clamp(40px,8vw,90px);line-height:1.02;margin:14px 0 4px;
-         letter-spacing:1px;text-shadow:0 0 28px rgba(0,234,255,.45), 0 0 44px rgba(122,0,255,.35)}
-  .grad{background:linear-gradient(90deg,var(--n1),var(--n2),var(--n3));
-        -webkit-background-clip:text;background-clip:text;color:transparent}
-  .sub{font-size:clamp(14px,3.6vw,20px);color:var(--muted);min-height:26px}
-  .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:22px}
-  .btn{padding:12px 18px;border-radius:14px;font-weight:700;border:1px solid #2a2a5a;
-       background:linear-gradient(90deg,#161642,#151531);box-shadow:0 0 12px rgba(0,234,255,.25);transition:.2s}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 0 22px rgba(0,234,255,.55)}
-  .btn.primary{background:linear-gradient(90deg,var(--n1),var(--n2));color:#041017;border:none}
-
-  /* cards */
-  .grid{display:grid;gap:18px}
-  @media (min-width:920px){.grid.cols-2{grid-template-columns:1.15fr .85fr}}
-  .card{background:linear-gradient(180deg,#0a0a22, #0a0a18);border-radius:22px;padding:28px;position:relative;overflow:hidden}
-  .card::before{content:"";position:absolute;inset:-2px;border-radius:24px;
-    background: conic-gradient(from var(--r,0deg), var(--n1), var(--n2), var(--n3), var(--n1));
-    filter: blur(12px);z-index:-1;animation: spin 14s linear infinite}
-  @keyframes spin{to{--r:360deg}}
-  .secHead{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-  .secHead .emoji{font-size:22px;filter:drop-shadow(0 0 8px rgba(255,255,255,.35))}
-  h2{font-size:clamp(22px,4.5vw,34px);margin:0 0 12px;font-family:Orbitron,sans-serif}
-  p{margin:10px 0 0;font-size:17px;line-height:1.75}
-  .hr{height:1px;background:linear-gradient(90deg,transparent,#2a2a66,transparent);margin:24px 0}
-  .list{margin:8px 0 0;padding-left:18px}
-  .list li{margin:8px 0}
-  .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-  .tag{padding:8px 12px;font-weight:600;border-radius:999px;background:#111238;border:1px solid #27275a}
-  footer{padding:42px 18px 88px;text-align:center;color:#9aa2ff}
+  section{padding:70px 20px;max-width:1200px;margin:auto}
+  h1,h2{text-align:center;text-shadow:0 0 20px var(--neon1),0 0 40px var(--neon2)}
+  .grad{background:linear-gradient(90deg,var(--neon1),var(--neon2),var(--neon3));-webkit-background-clip:text;color:transparent}
+  .card{background:rgba(10,10,30,0.85);padding:25px;border-radius:20px;box-shadow:0 0 25px rgba(0,234,255,.25);margin:20px 0}
+  footer{text-align:center;padding:40px;color:#9aa2ff}
+  .btn{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--neon1),var(--neon2));color:#041017;font-weight:bold;margin:10px;box-shadow:0 0 20px rgba(0,234,255,.5)}
+  canvas.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
 </style>
 </head>
 <body>
-<div id="glow"></div>
-<canvas id="fx"></canvas>
-<div class="wrap">
+<canvas class="bg"></canvas>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="badge">⚡ Welcome to my <b>Gaming World</b> ⚡</div>
-    <h1 class="title">I’m <span class="grad">Remo</span> <small style="font-weight:500;color:#c9d0ff">(Deepak)</small></h1>
-    <div class="sub" id="type"></div>
-    <div class="cta">
-      <a class="btn primary" href="#about">Explore</a>
-      <a class="btn" href="https://www.instagram.com/itxxremo_/" target="_blank" rel="noopener">Instagram ➜ @itxxremo_</a>
-      <a class="btn" href="mailto:Itxxremo@gmail.com">Email ➜ Itxxremo@gmail.com</a>
-    </div>
-  </section>
+<section>
+  <h1>I’m <span class="grad">Remo</span> ⚡</h1>
+  <p style="text-align:center;font-size:18px">Gamer • Dreamer • Developer • Ethical Hacker Learner</p>
+</section>
 
-  <!-- ABOUT + SKILLS -->
-  <section id="about" class="grid cols-2">
-    <div class="card">
-      <div class="secHead"><span class="emoji">👑</span><h2>About Me</h2></div>
-      <p>I’m <b>Remo</b> (Deepak) from <b>Punsia</b>. I study at <b>Adwaita Mission School, Bounsi (Banka)</b> and I’m in <b>Class 8</b>.</p>
-      <p>I’m a future <b>game developer</b>, <b>web & app creator</b>, and a <b>graphic design</b> enthusiast. I spend time exploring <b>HTML</b>, <b>CSS</b>, <b>C++</b>, designing interfaces, and leveling up every day.</p>
-      <p>I like to stay <b>alone</b>—that’s where I find my real strength, focus and creativity 🚀.</p>
-      <div class="hr"></div>
-      <p style="font-style:italic;color:#b6bdff">
-        “I believe in <b>smart learning</b>. If studying for two days gives me 80%,
-        I won’t spend ten more days chasing 100%. I invest that time in building
-        my skills, gaming creativity, and future.”
-      </p>
-      <div class="tagrow">
-        <span class="tag">Hard work</span>
-        <span class="tag">Positive attitude</span>
-        <span class="tag">Focus</span>
-        <span class="tag">Consistency</span>
-      </div>
-    </div>
+<section class="card">
+  <h2>👑 About Me</h2>
+  <p>Hey warriors! I’m <b>Remo</b> (real name Deepak) from Bihar. I study at <b>Adwaita Mission School</b>, Class 8.</p>
+  <p>I’m passionate about <b>gaming, coding, and hacking</b>. I’m learning <b>HTML, CSS, C++, and Ethical Hacking</b> (via Termux & X tools). </p>
+  <p>In studies, I’m average — because I believe:  
+  <i>“If I can score 80% with just 2 days of study, why waste 10 days for 100%? Instead, I use that time to build skills that will make me unstoppable.”</i></p>
+</section>
 
-    <div class="card">
-      <div class="secHead"><span class="emoji">🧩</span><h2>Skills</h2></div>
-      <ul class="list">
-        <li>Frontend basics — <b>HTML</b>, <b>CSS</b></li>
-        <li>Programming starter — <b>C++</b></li>
-        <li>Graphic & Web Design (UI/UX)</li>
-        <li>Learning: Game Dev, App Making</li>
-      </ul>
-      <div class="hr"></div>
-      <div class="secHead"><span class="emoji">🎮</span><h2>Favorite Games</h2></div>
-      <ul class="list">
-        <li>🔥 Free Fire</li>
-        <li>⚡ BGMI</li>
-      </ul>
-    </div>
-  </section>
+<section class="card">
+  <h2>🎮 Hurricane – Mini Game</h2>
+  <p style="text-align:center">Play my own game <b>Hurricane</b> ↓</p>
+  <canvas id="gameCanvas" width="400" height="500" style="background:#000;border:2px solid var(--neon1);display:block;margin:20px auto"></canvas>
+  <p style="text-align:center"><i>Made by Remo ⚡</i></p>
+</section>
 
-  <!-- SHOWCASE -->
-  <section id="show" class="card">
-    <div class="secHead"><span class="emoji">🌌</span><h2>What I’m Building</h2></div>
-    <p>Mini games, neon UIs, and crazy animations. New drops coming soon…</p>
-    <div class="tagrow">
-      <span class="tag">Gaming UI</span>
-      <span class="tag">Neon Effects</span>
-      <span class="tag">Particles</span>
-      <span class="tag">Responsive</span>
-    </div>
-  </section>
+<section class="card">
+  <h2>📬 Contact</h2>
+  <p>Email: <a href="mailto:itxxremo@gmail.com">itxxremo@gmail.com</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/itxxremo_" target="_blank">@itxxremo_</a></p>
+  <a class="btn" href="mailto:itxxremo@gmail.com">Email Me</a>
+  <a class="btn" href="https://www.instagram.com/itxxremo_" target="_blank">Instagram</a>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="card" style="margin-top:18px">
-    <div class="secHead"><span class="emoji">📬</span><h2>Connect</h2></div>
-    <p>DM me on Instagram or drop an email.</p>
-    <p>
-      <a class="btn primary" href="https://www.instagram.com/itxxremo_/" target="_blank" rel="noopener">Follow @itxxremo_</a>
-      <a class="btn" href="mailto:Itxxremo@gmail.com">Email: Itxxremo@gmail.com</a>
-    </p>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Remo • Built with 💙 grit & pixels.
-  </footer>
-</div>
+<footer>
+  ⚡ Made with ❤️ & Code by <span class="grad">Remo</span> ⚡
+</footer>
 
 <script>
-/* ===== Typing effect ===== */
-const lines = [
-  "Pro Gamer • Dreamer • Creator",
-  "Future Game & App Developer",
-  "Web Designer • Graphic Enthusiast"
-];
-let i=0, j=0, del=false, el=document.getElementById("type");
-(function tick(){
-  const t = lines[i];
-  el.textContent = t.slice(0, j) + (Date.now()%700<350?" ▍":"");
-  if(!del && j<t.length) j++;
-  else if(!del && j===t.length){del=true; setTimeout(tick,1100); return;}
-  else if(del && j>0) j--;
-  else{ del=false; i=(i+1)%lines.length; }
-  setTimeout(tick, del?28:42);
-})();
-
-/* ===== Live wallpaper: particle network ===== */
-const c = document.getElementById('fx'), ctx = c.getContext('2d');
-let w,h, dpr=window.devicePixelRatio||1, P=[];
-function resize(){ w=innerWidth; h=innerHeight; c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
-addEventListener('resize', resize); resize();
-
-const N=120;
-function rnd(a,b){return Math.random()*(b-a)+a}
-for(let k=0;k<N;k++){
-  P.push({x:rnd(0,w), y:rnd(0,h), vx:rnd(-.35,.35), vy:rnd(-.35,.35)});
-}
-function step(){
-  ctx.clearRect(0,0,w,h);
-  // subtle fade trail
-  ctx.fillStyle='rgba(6,6,20,.25)';
-  ctx.fillRect(0,0,w,h);
-  // draw connections
-  for(let i=0;i<P.length;i++){
-    const a=P[i];
-    a.x+=a.vx; a.y+=a.vy;
-    if(a.x<0||a.x>w) a.vx*=-1;
-    if(a.y<0||a.y>h) a.vy*=-1;
-
-    // points
-    ctx.fillStyle='rgba(255,255,255,.9)';
-    ctx.beginPath(); ctx.arc(a.x,a.y,1.6,0,6.283); ctx.fill();
-
-    for(let j=i+1;j<P.length;j++){
-      const b=P[j], dx=a.x-b.x, dy=a.y-b.y, d=dx*dx+dy*dy;
-      if(d<140*140){
-        const o = 1 - d/(140*140);
-        const g = ctx.createLinearGradient(a.x,a.y,b.x,b.y);
-        g.addColorStop(0,'rgba(0,234,255,'+o+')');
-        g.addColorStop(1,'rgba(122,0,255,'+o+')');
-        ctx.strokeStyle=g; ctx.lineWidth=1;
-        ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
-      }
-    }
+/* ===== Neon background ===== */
+const bg=document.querySelector("canvas.bg"),ctx=bg.getContext("2d");
+function resize(){bg.width=innerWidth;bg.height=innerHeight}resize();addEventListener("resize",resize);
+let stars=[...Array(150)].map(()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2+1}));
+function animateBG(){
+  ctx.fillStyle="rgba(5,0,20,0.3)";ctx.fillRect(0,0,bg.width,bg.height);
+  for(let s of stars){ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    ctx.fillStyle="rgba(0,234,255,.8)";ctx.fill();
+    s.y+=0.4;if(s.y>bg.height)s.y=0;
   }
-  requestAnimationFrame(step);
-}
-step();
+  requestAnimationFrame(animateBG);
+}animateBG();
 
-/* year */
-document.getElementById('year').textContent = new Date().getFullYear();
+/* ===== Hurricane Mini Game ===== */
+const gc=document.getElementById("gameCanvas"),gctx=gc.getContext("2d");
+let player={x:180,y:450,w:40,h:40}, bullets=[], enemies=[], score=0;
+document.addEventListener("keydown",e=>{
+  if(e.key==="ArrowLeft" && player.x>0) player.x-=20;
+  if(e.key==="ArrowRight" && player.x<gc.width-player.w) player.x+=20;
+  if(e.key===" ") bullets.push({x:player.x+18,y:player.y-10});
+});
+function spawnEnemy(){enemies.push({x:Math.random()*360,y:-20,w:30,h:30})}
+setInterval(spawnEnemy,1000);
+function updateGame(){
+  gctx.fillStyle="#000";gctx.fillRect(0,0,gc.width,gc.height);
+  gctx.fillStyle="cyan";gctx.fillRect(player.x,player.y,player.w,player.h);
+  gctx.fillStyle="lime";
+  bullets.forEach((b,i)=>{b.y-=5;gctx.fillRect(b.x,b.y,5,10);if(b.y<0)bullets.splice(i,1)});
+  gctx.fillStyle="red";
+  enemies.forEach((en,ei)=>{en.y+=2;gctx.fillRect(en.x,en.y,en.w,en.h);
+    bullets.forEach((b,bi)=>{if(b.x<en.x+en.w&&b.x+5>en.x&&b.y<en.y+en.h&&b.y+10>en.y){enemies.splice(ei,1);bullets.splice(bi,1);score++;}});
+    if(en.y>gc.height) enemies.splice(ei,1);
+  });
+  gctx.fillStyle="white";gctx.fillText("Score: "+score,10,20);
+  requestAnimationFrame(updateGame);
+}updateGame();
 </script>
 </body>
-</html><!!
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

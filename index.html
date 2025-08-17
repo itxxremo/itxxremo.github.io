@@ -1,22 +1,168 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remo | Gamer & Developer</title>
+  <title>Remo | Gaming World</title>
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
+
+    * {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      color: white;
-      background: black;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #000010, #0a0033, #001a1a);
+      color: #fff;
+      text-align: center;
       overflow-x: hidden;
     }
-    .hero {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items
+
+    header {
+      padding: 100px 20px;
+      background: url('https://i.ibb.co/9gS9WcH/gaming-bg.gif') center/cover no-repeat;
+      color: #fff;
+      text-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    header h2 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #ff0040;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 20px #ff0040, 0 0 40px #ff0040;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #00ffff;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    }
+
+    section {
+      padding: 60px 20px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    }
+
+    section p, li {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin: 10px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li::before {
+      content: "🎮 ";
+    }
+
+    footer {
+      padding: 30px 20px;
+      background: #0a001a;
+      font-size: 1rem;
+      color: #aaa;
+      box-shadow: 0 -5px 20px #00ffff;
+    }
+
+    footer a {
+      color: #ff0040;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚡ Welcome to Remo's Gaming World ⚡</h1>
+    <h2>I'm <span style="color:#ff0040">Remo</span> (Deepak Kumar)</h2>
+    <a href="#about" class="btn">Explore</a>
+  </header>
+
+  <section id="about">
+    <h3>👑 About Me</h3>
+    <p>
+      Hey warriors! I'm <span style="color:#ff0040">Remo</span> from <b>Punsia</b>, 
+      a passionate dreamer studying at <b>Adwaita Mission School, Bounsi, Banka</b> (Class 8).  
+      I'm not just a student – I'm a <span style="color:#00ffff">future game developer</span>, 
+      <span style="color:#ff00ff">web & app creator</span>, and a graphic designer 🎨.  
+    </p>
+    <p>
+      My strengths are <b>hard work, focus & positive attitude 💪</b>.  
+      I enjoy being <span style="color:#ff0040">alone</span>, because that's where I find my 
+      true strength and creativity 🚀✨.
+    </p>
+  </section>
+
+  <section id="games">
+    <h3>🎮 Favorite Games</h3>
+    <ul>
+      <li>🔥 Free Fire</li>
+      <li>⚡ BGMI</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h3>📱 Connect with Me</h3>
+    <p>Follow me on Instagram for gaming updates 👇</p>
+    <a class="btn" href="https://www.instagram.com/itxxremo_" target="_blank">📸 itxxremo_</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Remo | Built with ❤️ and Passion for Gaming</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -1,155 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Remo | Gaming World</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap');
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Remo | Pro Gamer • Developer • Designer</title>
+<meta name="description" content="Remo (Deepak) — Class 8, Adwaita Mission School, gamer & future game/web/app developer from Punsia, Banka. Neon portfolio with live particles." />
+<meta name="theme-color" content="#00eaff" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#050512;
+    --panel:#0c0c2a;
+    --ink:#e9ebff;
+    --muted:#a3a9ff;
+    --n1:#00eaff; --n2:#7a00ff; --n3:#ff007a;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0}
+  body{
+    color:var(--ink);
+    background:radial-gradient(1200px 600px at 10% 10%, #0a0a2a 0%, transparent 60%),
+               radial-gradient(900px 500px at 90% 20%, #120028 0%, transparent 60%),
+               linear-gradient(180deg,#040412,#060619);
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{position:relative;isolation:isolate}
+  /* live wallpaper (behind everything) */
+  #fx{position:fixed;inset:0;z-index:-2}
+  #glow{position:fixed;inset:-30%;filter:blur(60px);opacity:.6;z-index:-3;
+        background:radial-gradient(800px 800px at 20% 20%, rgba(0,234,255,.25), transparent 60%),
+                    radial-gradient(900px 900px at 85% 25%, rgba(122,0,255,.18), transparent 65%),
+                    radial-gradient(1000px 1000px at 50% 90%, rgba(255,0,122,.18), transparent 60%)}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  /* layout */
+  section{padding:78px 18px;max-width:1100px;margin:0 auto}
+  .hero{height:min(92vh,820px);display:grid;place-content:center;text-align:center}
+  .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;
+         background:#0f1035;border:1px solid #25265f;box-shadow:0 0 22px rgba(122,0,255,.25) inset}
+  .title{font-family: Orbitron, sans-serif;font-weight:800;
+         font-size:clamp(40px,8vw,90px);line-height:1.02;margin:14px 0 4px;
+         letter-spacing:1px;text-shadow:0 0 28px rgba(0,234,255,.45), 0 0 44px rgba(122,0,255,.35)}
+  .grad{background:linear-gradient(90deg,var(--n1),var(--n2),var(--n3));
+        -webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{font-size:clamp(14px,3.6vw,20px);color:var(--muted);min-height:26px}
+  .cta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:22px}
+  .btn{padding:12px 18px;border-radius:14px;font-weight:700;border:1px solid #2a2a5a;
+       background:linear-gradient(90deg,#161642,#151531);box-shadow:0 0 12px rgba(0,234,255,.25);transition:.2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 0 22px rgba(0,234,255,.55)}
+  .btn.primary{background:linear-gradient(90deg,var(--n1),var(--n2));color:#041017;border:none}
 
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(135deg, #000010, #0a0033, #001a1a);
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    header {
-      padding: 100px 20px;
-      background: url('https://i.ibb.co/9gS9WcH/gaming-bg.gif') center/cover no-repeat;
-      color: #fff;
-      text-shadow: 0 0 15px #ff00ff, 0 0 30px #00ffff;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    header h2 {
-      font-size: 1.5rem;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #ff0040;
-      color: #fff;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 20px #ff0040, 0 0 40px #ff0040;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #00ffff;
-      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
-    }
-
-    section {
-      padding: 60px 20px;
-      animation: fadeInUp 1.5s ease-in-out;
-    }
-
-    section h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #00ffff;
-      text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
-    }
-
-    section p, li {
-      font-size: 1.2rem;
-      line-height: 1.8;
-      margin: 10px 0;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    ul li::before {
-      content: "🎮 ";
-    }
-
-    footer {
-      padding: 30px 20px;
-      background: #0a001a;
-      font-size: 1rem;
-      color: #aaa;
-      box-shadow: 0 -5px 20px #00ffff;
-    }
-
-    footer a {
-      color: #ff0040;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes fadeInUp {
-      from { transform: translateY(50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-  </style>
+  /* cards */
+  .grid{display:grid;gap:18px}
+  @media (min-width:920px){.grid.cols-2{grid-template-columns:1.15fr .85fr}}
+  .card{background:linear-gradient(180deg,#0a0a22, #0a0a18);border-radius:22px;padding:28px;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;inset:-2px;border-radius:24px;
+    background: conic-gradient(from var(--r,0deg), var(--n1), var(--n2), var(--n3), var(--n1));
+    filter: blur(12px);z-index:-1;animation: spin 14s linear infinite}
+  @keyframes spin{to{--r:360deg}}
+  .secHead{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .secHead .emoji{font-size:22px;filter:drop-shadow(0 0 8px rgba(255,255,255,.35))}
+  h2{font-size:clamp(22px,4.5vw,34px);margin:0 0 12px;font-family:Orbitron,sans-serif}
+  p{margin:10px 0 0;font-size:17px;line-height:1.75}
+  .hr{height:1px;background:linear-gradient(90deg,transparent,#2a2a66,transparent);margin:24px 0}
+  .list{margin:8px 0 0;padding-left:18px}
+  .list li{margin:8px 0}
+  .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .tag{padding:8px 12px;font-weight:600;border-radius:999px;background:#111238;border:1px solid #27275a}
+  footer{padding:42px 18px 88px;text-align:center;color:#9aa2ff}
+</style>
 </head>
 <body>
-  <header>
-    <h1>⚡ Welcome to Remo's Gaming World ⚡</h1>
-    <h2>I'm <span style="color:#ff0040">Remo</span> (Deepak Kumar)</h2>
-    <a href="#about" class="btn">Explore</a>
-  </header>
+<div id="glow"></div>
+<canvas id="fx"></canvas>
+<div class="wrap">
 
-  <section id="about">
-    <h3>👑 About Me</h3>
-    <p>
-      Hey warriors! I'm <span style="color:#ff0040">Remo</span> from <b>Punsia</b>, 
-      a passionate dreamer studying at <b>Adwaita Mission School, Bounsi, Banka</b> (Class 8).  
-      I'm not just a student – I'm a <span style="color:#00ffff">future game developer</span>, 
-      <span style="color:#ff00ff">web & app creator</span>, and a graphic designer 🎨.  
-    </p>
-    <p>
-      My strengths are <b>hard work, focus & positive attitude 💪</b>.  
-      I enjoy being <span style="color:#ff0040">alone</span>, because that's where I find my 
-      true strength and creativity 🚀✨.
-    </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">⚡ Welcome to my <b>Gaming World</b> ⚡</div>
+    <h1 class="title">I’m <span class="grad">Remo</span> <small style="font-weight:500;color:#c9d0ff">(Deepak)</small></h1>
+    <div class="sub" id="type"></div>
+    <div class="cta">
+      <a class="btn primary" href="#about">Explore</a>
+      <a class="btn" href="https://www.instagram.com/itxxremo_/" target="_blank" rel="noopener">Instagram ➜ @itxxremo_</a>
+      <a class="btn" href="mailto:Itxxremo@gmail.com">Email ➜ Itxxremo@gmail.com</a>
+    </div>
   </section>
 
-  <section id="games">
-    <h3>🎮 Favorite Games</h3>
-    <ul>
-      <li>🔥 Free Fire</li>
-      <li>⚡ BGMI</li>
-    </ul>
+  <!-- ABOUT + SKILLS -->
+  <section id="about" class="grid cols-2">
+    <div class="card">
+      <div class="secHead"><span class="emoji">👑</span><h2>About Me</h2></div>
+      <p>I’m <b>Remo</b> (Deepak) from <b>Punsia</b>. I study at <b>Adwaita Mission School, Bounsi (Banka)</b> and I’m in <b>Class 8</b>.</p>
+      <p>I’m a future <b>game developer</b>, <b>web & app creator</b>, and a <b>graphic design</b> enthusiast. I spend time exploring <b>HTML</b>, <b>CSS</b>, <b>C++</b>, designing interfaces, and leveling up every day.</p>
+      <p>I like to stay <b>alone</b>—that’s where I find my real strength, focus and creativity 🚀.</p>
+      <div class="hr"></div>
+      <p style="font-style:italic;color:#b6bdff">
+        “I believe in <b>smart learning</b>. If studying for two days gives me 80%,
+        I won’t spend ten more days chasing 100%. I invest that time in building
+        my skills, gaming creativity, and future.”
+      </p>
+      <div class="tagrow">
+        <span class="tag">Hard work</span>
+        <span class="tag">Positive attitude</span>
+        <span class="tag">Focus</span>
+        <span class="tag">Consistency</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="secHead"><span class="emoji">🧩</span><h2>Skills</h2></div>
+      <ul class="list">
+        <li>Frontend basics — <b>HTML</b>, <b>CSS</b></li>
+        <li>Programming starter — <b>C++</b></li>
+        <li>Graphic & Web Design (UI/UX)</li>
+        <li>Learning: Game Dev, App Making</li>
+      </ul>
+      <div class="hr"></div>
+      <div class="secHead"><span class="emoji">🎮</span><h2>Favorite Games</h2></div>
+      <ul class="list">
+        <li>🔥 Free Fire</li>
+        <li>⚡ BGMI</li>
+      </ul>
+    </div>
   </section>
 
-  <section id="contact">
-    <h3>📱 Connect with Me</h3>
-    <p>Follow me on Instagram for gaming updates 👇</p>
-    <a class="btn" href="https://www.instagram.com/itxxremo_" target="_blank">📸 itxxremo_</a>
+  <!-- SHOWCASE -->
+  <section id="show" class="card">
+    <div class="secHead"><span class="emoji">🌌</span><h2>What I’m Building</h2></div>
+    <p>Mini games, neon UIs, and crazy animations. New drops coming soon…</p>
+    <div class="tagrow">
+      <span class="tag">Gaming UI</span>
+      <span class="tag">Neon Effects</span>
+      <span class="tag">Particles</span>
+      <span class="tag">Responsive</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="card" style="margin-top:18px">
+    <div class="secHead"><span class="emoji">📬</span><h2>Connect</h2></div>
+    <p>DM me on Instagram or drop an email.</p>
+    <p>
+      <a class="btn primary" href="https://www.instagram.com/itxxremo_/" target="_blank" rel="noopener">Follow @itxxremo_</a>
+      <a class="btn" href="mailto:Itxxremo@gmail.com">Email: Itxxremo@gmail.com</a>
+    </p>
   </section>
 
   <footer>
-    <p>© 2025 Remo | Built with ❤️ and Passion for Gaming</p>
+    © <span id="year"></span> Remo • Built with 💙 grit & pixels.
   </footer>
-</body>
-</html>
+</div>
 
+<script>
+/* ===== Typing effect ===== */
+const lines = [
+  "Pro Gamer • Dreamer • Creator",
+  "Future Game & App Developer",
+  "Web Designer • Graphic Enthusiast"
+];
+let i=0, j=0, del=false, el=document.getElementById("type");
+(function tick(){
+  const t = lines[i];
+  el.textContent = t.slice(0, j) + (Date.now()%700<350?" ▍":"");
+  if(!del && j<t.length) j++;
+  else if(!del && j===t.length){del=true; setTimeout(tick,1100); return;}
+  else if(del && j>0) j--;
+  else{ del=false; i=(i+1)%lines.length; }
+  setTimeout(tick, del?28:42);
+})();
+
+/* ===== Live wallpaper: particle network ===== */
+const c = document.getElementById('fx'), ctx = c.getContext('2d');
+let w,h, dpr=window.devicePixelRatio||1, P=[];
+function resize(){ w=innerWidth; h=innerHeight; c.width=w*dpr; c.height=h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+addEventListener('resize', resize); resize();
+
+const N=120;
+function rnd(a,b){return Math.random()*(b-a)+a}
+for(let k=0;k<N;k++){
+  P.push({x:rnd(0,w), y:rnd(0,h), vx:rnd(-.35,.35), vy:rnd(-.35,.35)});
+}
+function step(){
+  ctx.clearRect(0,0,w,h);
+  // subtle fade trail
+  ctx.fillStyle='rgba(6,6,20,.25)';
+  ctx.fillRect(0,0,w,h);
+  // draw connections
+  for(let i=0;i<P.length;i++){
+    const a=P[i];
+    a.x+=a.vx; a.y+=a.vy;
+    if(a.x<0||a.x>w) a.vx*=-1;
+    if(a.y<0||a.y>h) a.vy*=-1;
+
+    // points
+    ctx.fillStyle='rgba(255,255,255,.9)';
+    ctx.beginPath(); ctx.arc(a.x,a.y,1.6,0,6.283); ctx.fill();
+
+    for(let j=i+1;j<P.length;j++){
+      const b=P[j], dx=a.x-b.x, dy=a.y-b.y, d=dx*dx+dy*dy;
+      if(d<140*140){
+        const o = 1 - d/(140*140);
+        const g = ctx.createLinearGradient(a.x,a.y,b.x,b.y);
+        g.addColorStop(0,'rgba(0,234,255,'+o+')');
+        g.addColorStop(1,'rgba(122,0,255,'+o+')');
+        ctx.strokeStyle=g; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(step);
+}
+step();
+
+/* year */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html><!!
 
 
 
